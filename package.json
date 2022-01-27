@@ -89,5 +89,6 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "workspaces": { "nohoist": ["swagger-ui-express"] }
 }
