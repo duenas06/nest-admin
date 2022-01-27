@@ -9,12 +9,6 @@ import { Teacher, TeacherSchema } from './schemas/teachers.schema';
     MongooseModule.forFeature([{ name: Teacher.name, schema: TeacherSchema }]),
   ],
   controllers: [TeachersController],
-  providers: [
-    TeachersService,
-    // {
-    //   provide: getModelToken(Teacher.name),
-    //   useValue: TeacherSchema,
-    // },
-  ],
+  providers: [TeachersService],
 })
 export class TeachersModule {}
