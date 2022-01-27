@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TeachersService } from './teachers.service';
 import { TeachersController } from './teachers.controller';
-import { getModelToken, MongooseModule } from '@nestjs/mongoose';
+import { MongooseModule } from '@nestjs/mongoose';
 import { Teacher, TeacherSchema } from './schemas/teachers.schema';
 
 @Module({

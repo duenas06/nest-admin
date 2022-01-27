@@ -1,8 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { IsDefined, MaxLength } from 'class-validator';
+import { MaxLength } from 'class-validator';
 import { PrimaryGeneratedColumn } from 'typeorm';
-import { ApiProperty } from '@nestjs/swagger';
 
 export type StudentDocument = Student & Document;
 

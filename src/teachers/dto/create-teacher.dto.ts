@@ -1,5 +1,4 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { classToPlain } from 'class-transformer';
 import { IsDefined, MaxLength } from 'class-validator';
 import { PrimaryGeneratedColumn, Column } from 'typeorm';
 export class CreateTeacherDto {
