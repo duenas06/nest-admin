@@ -11,7 +11,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Admin Crud')
     .setDescription('Rest API for Admin User')
-    .setVersion('v1.0')
+    .setVersion('2.2.1')
     .build();
   const document = SwaggerModule.createDocument(app, config, {
     ignoreGlobalPrefix: false,
