@@ -18,6 +18,7 @@ async function bootstrap() {
     .setTitle('Admin Crud')
     .setDescription('Rest API for Admin User')
     .setVersion('1.0')
+    .addServer('https://nest-admin-drey.vercel.app/')
     .build();
   const document = SwaggerModule.createDocument(app, config, {
     ignoreGlobalPrefix: false,
