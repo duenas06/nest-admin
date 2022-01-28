@@ -13,18 +13,22 @@ import { ApiTags } from '@nestjs/swagger';
 import { TeachersService } from './teachers.service';
 import { CreateTeacherDto } from './dto/create-teacher.dto';
 import { UpdateTeacherDto } from './dto/update-teacher.dto';
-import { LoginDTO } from './dto/login.dto';
-import { LocalAuthGuard } from 'src/auth/local-auth.guard';
+import { TeacherLogin } from './dto/login.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @ApiTags('Teachers')
 @Controller('teachers')
 export class TeachersController {
   constructor(private readonly teachersService: TeachersService) {}
 
-  @UseGuards(LocalAuthGuard)
-  @Post('login')
-  login(@Request() req): any {
-    return req.teacher;
+  // This route will require successfully passing our default auth strategy (JWT) in order
+  // to access the route
+  @Get('test')
+  @UseGuards(AuthGuard())
+  testAuthRoute() {
+    return {
+      message: 'You did it!',
+    };
   }
 
   @Post('create_account')

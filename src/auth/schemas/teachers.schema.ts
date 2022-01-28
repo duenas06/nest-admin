@@ -2,13 +2,13 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { MaxLength } from 'class-validator';
 import { PrimaryGeneratedColumn } from 'typeorm';
-import * as bcrypt from 'bcrypt';
 
 export type TeacherDocument = Teacher & Document;
 
 @Schema()
 export class Teacher {
   @Prop()
+  @PrimaryGeneratedColumn('uuid')
   @MaxLength(7)
   id: string;
 

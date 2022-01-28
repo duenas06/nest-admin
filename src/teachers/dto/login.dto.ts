@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsDefined } from 'class-validator';
 
-export class LoginDTO {
+export class TeacherLogin {
   @ApiProperty()
   @IsDefined()
   id: string;

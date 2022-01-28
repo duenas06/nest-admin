@@ -11,10 +11,6 @@ export class StudentsService {
     @InjectModel(Student.name) private studentModel: Model<StudentDocument>,
   ) {}
 
-  async login(id: string): Promise<Student> {
-    return this.studentModel.findOne({ id });
-  }
-
   async create(createStudentDto: CreateStudentDto): Promise<Student> {
     return new this.studentModel(createStudentDto).save();
   }
