@@ -11,6 +11,7 @@ import { JwtModule } from '@nestjs/jwt';
 @Module({
   imports: [
     TeachersModule,
+    StudentsModule,
     PassportModule.register({ defaultStrategy: 'jwt', session: false }),
     JwtModule.register({
       secretOrPrivateKey: 'tytoadmin',

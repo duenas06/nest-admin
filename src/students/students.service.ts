@@ -4,13 +4,18 @@ import { Model } from 'mongoose';
 import { CreateStudentDto } from './dto/create-student.dto';
 import { UpdateStudentDto } from './dto/update-student.dto';
 import { Student, StudentDocument } from './schemas/students.schema';
+import { Students } from './student.interface';
 
 @Injectable()
 export class StudentsService {
   constructor(
     @InjectModel(Student.name) private studentModel: Model<StudentDocument>,
+    @InjectModel('Student') private loginModel: Model<Students>,
   ) {}
 
+  async login(id): Promise<Students> {
+    return this.loginModel.findOne({ id: id });
+  }
   async create(createStudentDto: CreateStudentDto): Promise<Student> {
     return new this.studentModel(createStudentDto).save();
   }

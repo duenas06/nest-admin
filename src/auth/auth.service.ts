@@ -3,15 +3,18 @@ import { TeachersService } from 'src/teachers/teachers.service';
 import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from './interfaces/jwt-payload.interface';
 import { TeacherLogin } from '../teachers/dto/login.dto';
+import { StudentsService } from 'src/students/students.service';
+import { StudentLogin } from 'src/students/dto/login.dto';
 
 @Injectable()
 export class AuthService {
   constructor(
     private teachersService: TeachersService,
+    private studentsService: StudentsService,
     private jwtService: JwtService,
   ) {}
 
-  async validateUserByPassword(loginAttempt: TeacherLogin) {
+  async validateTeacherByPassword(loginAttempt: TeacherLogin) {
     // This will be used for the initial login
     const teacherToAttempt = await this.teachersService.login(loginAttempt.id);
 
@@ -23,25 +26,35 @@ export class AuthService {
     } else {
       throw new UnauthorizedException();
     }
-
-    // return new Promise((resolve) => {
-    //   // Check the supplied password against the hash stored for this id
-    //   teacherToAttempt.checkPassword(loginAttempt.password, (err, isMatch) => {
-    //     if (err) throw new UnauthorizedException();
-
-    //     if (isMatch) {
-    //       // If there is a successful match, generate a JWT for the user
-    //       resolve(this.createJwtPayload(teacherToAttempt));
-    //     } else {
-    //       throw new UnauthorizedException();
-    //     }
-    //   });
-    // });
   }
 
-  async validateUserByJwt(payload: JwtPayload) {
-    // This will be used when the user has already logged in and has a JWT
+  async validateTeacherByJwt(payload: JwtPayload) {
+    // This will be used when the teacher has already logged in and has a JWT
     const user = await this.teachersService.login(payload.id);
+    if (user) {
+      return this.createJwtPayload(user);
+    } else {
+      throw new UnauthorizedException();
+    }
+  }
+
+  async validateStudentByPassword(loginAttempt: StudentLogin) {
+    // This will be used for the initial login
+    const studentToAttempt = await this.studentsService.login(loginAttempt.id);
+
+    if (
+      studentToAttempt &&
+      loginAttempt.password === studentToAttempt.password
+    ) {
+      return this.createJwtPayload(studentToAttempt);
+    } else {
+      throw new UnauthorizedException();
+    }
+  }
+
+  async validateStudentByJwt(payload: JwtPayload) {
+    // This will be used when the teacher has already logged in and has a JWT
+    const user = await this.studentsService.login(payload.id);
     if (user) {
       return this.createJwtPayload(user);
     } else {

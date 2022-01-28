@@ -7,7 +7,12 @@ export class AuthController {
   constructor(private authService: AuthService) {}
 
   @Post('teacher/login')
-  async login(@Request() req, @Body() loginUserDto: TeacherLogin) {
-    return await this.authService.validateUserByPassword(loginUserDto);
+  async loginTeacher(@Request() req, @Body() loginUserDto: TeacherLogin) {
+    return await this.authService.validateTeacherByPassword(loginUserDto);
+  }
+
+  @Post('student/login')
+  async loginStudent(@Request() req, @Body() loginUserDto: TeacherLogin) {
+    return await this.authService.validateStudentByPassword(loginUserDto);
   }
 }
