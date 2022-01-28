@@ -2,8 +2,8 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsDefined, MaxLength } from 'class-validator';
 import { PrimaryGeneratedColumn, Column } from 'typeorm';
 export class CreateStudentDto {
-  @PrimaryGeneratedColumn('uuid')
-  @MaxLength(7)
+  @ApiProperty()
+  @IsDefined()
   id: string;
 
   @MaxLength(254)

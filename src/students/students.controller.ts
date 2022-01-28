@@ -6,16 +6,25 @@ import {
   Put,
   Param,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { StudentsService } from './students.service';
 import { CreateStudentDto } from './dto/create-student.dto';
 import { UpdateStudentDto } from './dto/update-student.dto';
+import { LoginDTO } from './dto/login.dto';
+import { LocalAuthGuard } from 'src/auth/local-auth.guard';
 
 @ApiTags('Students')
 @Controller('students')
 export class StudentsController {
   constructor(private readonly studentsService: StudentsService) {}
+
+  @UseGuards(LocalAuthGuard)
+  @Post('login')
+  login(@Body() loginDto: LoginDTO) {
+    return {};
+  }
 
   @Post('create_account')
   create(@Body() createStudentDto: CreateStudentDto) {

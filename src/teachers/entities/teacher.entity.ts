@@ -5,7 +5,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity('teachers')
 export class TeachersEntity {
-  @PrimaryGeneratedColumn('uuid')
+  @ApiProperty()
   @MaxLength(7)
   id: string;
 
@@ -41,7 +41,7 @@ export class TeachersEntity {
 
   @MaxLength(254)
   @ApiProperty()
-  @Column()
+  @Column({ unique: true })
   @IsDefined()
   personalEmail: string;
 

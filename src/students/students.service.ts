@@ -11,6 +11,10 @@ export class StudentsService {
     @InjectModel(Student.name) private studentModel: Model<StudentDocument>,
   ) {}
 
+  async login(id: string): Promise<Student> {
+    return this.studentModel.findOne({ id });
+  }
+
   async create(createStudentDto: CreateStudentDto): Promise<Student> {
     return new this.studentModel(createStudentDto).save();
   }
@@ -19,16 +23,18 @@ export class StudentsService {
     return this.studentModel.find();
   }
 
-  async findOne(_id: string) {
-    return this.studentModel.findOne({ _id });
+  async findOne(id: string) {
+    return this.studentModel.findOne({ id });
   }
 
   // eslint-disable-next-line prettier/prettier
-  async update(_id: string, updateStudentDto: UpdateStudentDto): Promise<Student> {
-    return this.studentModel.findOneAndUpdate({ _id }, updateStudentDto);
+  async update(id: string, updateStudentDto: UpdateStudentDto): Promise<Student> {
+    return this.studentModel.findOneAndUpdate({ id }, updateStudentDto, {
+      new: true,
+    });
   }
 
-  async remove(_id: string) {
-    return this.studentModel.remove({ _id });
+  async remove(id: string) {
+    return this.studentModel.remove({ id });
   }
 }

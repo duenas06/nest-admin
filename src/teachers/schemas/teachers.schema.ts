@@ -27,7 +27,7 @@ export class Teacher {
   @Prop()
   suffix: string;
 
-  @Prop()
+  @Prop({ unique: true })
   personalEmail: string;
 }
 

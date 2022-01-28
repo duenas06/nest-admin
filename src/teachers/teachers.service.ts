@@ -10,6 +10,11 @@ export class TeachersService {
   constructor(
     @InjectModel(Teacher.name) private teacherModel: Model<TeacherDocument>,
   ) {}
+
+  async login(id: string): Promise<Teacher> {
+    return this.teacherModel.findOne({ id });
+  }
+
   async create(createTeacherDto: CreateTeacherDto): Promise<Teacher> {
     return new this.teacherModel(createTeacherDto).save();
   }
@@ -18,16 +23,18 @@ export class TeachersService {
     return this.teacherModel.find();
   }
 
-  async findOne(_id: string) {
-    return this.teacherModel.findOne({ _id });
+  async findOne(id: string) {
+    return this.teacherModel.findOne({ id });
   }
 
   // eslint-disable-next-line prettier/prettier
-  async update(_id: string, updateTeacherDto: UpdateTeacherDto): Promise<Teacher> {
-    return this.teacherModel.findOneAndUpdate({ _id }, updateTeacherDto);
+  async update(id: string, updateTeacherDto: UpdateTeacherDto): Promise<Teacher> {
+    return this.teacherModel.findOneAndUpdate({ id }, updateTeacherDto, {
+      new: true,
+    });
   }
 
-  async remove(_id: string) {
-    return this.teacherModel.remove({ _id });
+  async remove(id: string) {
+    return this.teacherModel.remove({ id });
   }
 }
