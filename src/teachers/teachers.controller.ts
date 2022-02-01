@@ -13,7 +13,6 @@ import { ApiTags } from '@nestjs/swagger';
 import { TeachersService } from './teachers.service';
 import { CreateTeacherDto } from './dto/create-teacher.dto';
 import { UpdateTeacherDto } from './dto/update-teacher.dto';
-import { TeacherLogin } from './dto/login.dto';
 import { AuthGuard } from '@nestjs/passport';
 
 @ApiTags('Teachers')

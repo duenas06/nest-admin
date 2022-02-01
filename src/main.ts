@@ -4,6 +4,7 @@ import { join } from 'path';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { ValidationPipe } from '@nestjs/common';
+// import swaggerUi from 'swagger-ui-express';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     cors: true,
@@ -18,7 +19,6 @@ async function bootstrap() {
     .setTitle('Admin Crud')
     .setDescription('Rest API for Admin User')
     .setVersion('1.0')
-    .addServer('https://nest-admin-drey.vercel.app/')
     .build();
   const document = SwaggerModule.createDocument(app, config, {
     ignoreGlobalPrefix: false,
