@@ -7,15 +7,15 @@ import 'dotenv/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
-// import { ServeStaticModule } from '@nestjs/serve-static';
-// import { join } from 'path';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     MongooseModule.forRoot(process.env.DATABASE_URL),
-    // ServeStaticModule.forRoot({
-    //   rootPath: join(__dirname, '..', 'client'),
-    // }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'client'),
+    }),
     TeachersModule,
     StudentsModule,
     AuthModule,
