@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateTeacherDto } from './dto/create-teacher.dto';
-import { TeacherLogin } from './dto/login.dto';
 import { UpdateTeacherDto } from './dto/update-teacher.dto';
 import { Teacher, TeacherDocument } from './schemas/teachers.schema';
 import { Teachers } from './teacher.interface';
