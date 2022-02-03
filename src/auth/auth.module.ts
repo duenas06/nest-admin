@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
 import { PassportModule } from '@nestjs/passport';
 import { StudentsModule } from 'src/students/students.module';
 import { TeachersModule } from 'src/teachers/teachers.module';
@@ -16,7 +15,7 @@ import { JwtModule } from '@nestjs/jwt';
     JwtModule.register({
       secretOrPrivateKey: 'tytoadmin',
       signOptions: {
-        expiresIn: 3600,
+        expiresIn: 86400,
       },
     }),
   ],
