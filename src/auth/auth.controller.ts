@@ -11,19 +11,6 @@ import { TeacherValidation } from 'src/teachers/dto/validation.dto';
 export class AuthController {
   constructor(private authService: AuthService) {}
 
-  @Post('teacher/login')
-  async loginTeacher(@Request() req, @Body() loginUserDto: TeacherLogin) {
-    return await this.authService.validateTeacherByPassword(loginUserDto);
-  }
-
-  @Post('teacher/validate')
-  async validateTeacher(
-    @Request() req,
-    @Body() loginUserDto: TeacherValidation,
-  ) {
-    return await this.authService.validateTeacherByJwt(loginUserDto);
-  }
-
   @Post('student/login')
   async loginStudent(@Request() req, @Body() loginUserDto: StudentLogin) {
     return await this.authService.validateStudentByPassword(loginUserDto);
@@ -35,5 +22,18 @@ export class AuthController {
     @Body() loginUserDto: StudentValidation,
   ) {
     return await this.authService.validateStudentByJwt(loginUserDto);
+  }
+
+  @Post('teacher/login')
+  async loginTeacher(@Request() req, @Body() loginUserDto: TeacherLogin) {
+    return await this.authService.validateTeacherByPassword(loginUserDto);
+  }
+
+  @Post('teacher/validate')
+  async validateTeacher(
+    @Request() req,
+    @Body() loginUserDto: TeacherValidation,
+  ) {
+    return await this.authService.validateTeacherByJwt(loginUserDto);
   }
 }
