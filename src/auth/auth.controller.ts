@@ -3,6 +3,8 @@ import { AuthService } from './auth.service';
 import { TeacherLogin } from '../teachers/dto/login.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { StudentLogin } from 'src/students/dto/login.dto';
+import { StudentValidation } from 'src/students/dto/validation.dto';
+import { TeacherValidation } from 'src/teachers/dto/validation.dto';
 
 @ApiTags('TYTO')
 @Controller()
@@ -15,8 +17,11 @@ export class AuthController {
   }
 
   @Post('teacher/validate')
-  async validateTeacher(@Request() req, @Body() loginUserDto: TeacherLogin) {
-    return await this.authService.validateTeacherByPassword(loginUserDto);
+  async validateTeacher(
+    @Request() req,
+    @Body() loginUserDto: TeacherValidation,
+  ) {
+    return await this.authService.validateTeacherByJwt(loginUserDto);
   }
 
   @Post('student/login')
@@ -25,7 +30,10 @@ export class AuthController {
   }
 
   @Post('student/validate')
-  async validateStudent(@Request() req, @Body() loginUserDto: StudentLogin) {
+  async validateStudent(
+    @Request() req,
+    @Body() loginUserDto: StudentValidation,
+  ) {
     return await this.authService.validateStudentByJwt(loginUserDto);
   }
 }
