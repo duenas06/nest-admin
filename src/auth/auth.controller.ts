@@ -2,8 +2,8 @@ import { Controller, Post, Body, Request } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { ApiTags } from '@nestjs/swagger';
 import { StudentLogin } from 'src/students/dto/login.dto';
-import { TeacherLogin } from 'src/teachers/dto/login.dto';
 import { StudentValidation } from 'src/students/dto/validation.dto';
+import { TeacherLogin } from 'src/teachers/dto/login.dto';
 import { TeacherValidation } from 'src/teachers/dto/validation.dto';
 
 @ApiTags('TYTO')
