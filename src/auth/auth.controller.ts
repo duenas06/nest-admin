@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Request } from '@nestjs/common';
+import { Controller, Post, Body, Request, Param } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { ApiTags } from '@nestjs/swagger';
 import { StudentLogin } from './dto/studentLogin.dto';
@@ -16,12 +16,9 @@ export class AuthController {
     return await this.authService.validateStudentByPassword(loginUserDto);
   }
 
-  @Post('student/validate')
-  async validateStudent(
-    @Request() req,
-    @Body() loginUserDto: StudentValidation,
-  ) {
-    return await this.authService.validateStudentByJwt(loginUserDto);
+  @Post('student/validate/:id')
+  async validateStudent(@Param('id') id: string) {
+    return await this.authService.validateStudentByJwt(id);
   }
 
   @Post('teacher/login')
@@ -29,11 +26,8 @@ export class AuthController {
     return await this.authService.validateTeacherByPassword(loginUserDto);
   }
 
-  @Post('teacher/validate')
-  async validateTeacher(
-    @Request() req,
-    @Body() loginUserDto: TeacherValidation,
-  ) {
-    return await this.authService.validateTeacherByJwt(loginUserDto);
+  @Post('teacher/validate/:id')
+  async validateTeacher(@Param('id') id: string) {
+    return await this.authService.validateTeacherByJwt(id);
   }
 }

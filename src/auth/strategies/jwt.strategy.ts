@@ -13,8 +13,8 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     });
   }
 
-  async validateTeacher(payload: JwtPayload) {
-    const user = await this.authService.validateTeacherByJwt(payload);
+  async validateTeacher(id: string) {
+    const user = await this.authService.validateTeacherByJwt(id);
 
     if (!user) {
       throw new UnauthorizedException();
@@ -23,8 +23,8 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     return user;
   }
 
-  async validateStudent(payload: JwtPayload) {
-    const user = await this.authService.validateStudentByJwt(payload);
+  async validateStudent(id: string) {
+    const user = await this.authService.validateStudentByJwt(id);
 
     if (!user) {
       throw new UnauthorizedException();

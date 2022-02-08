@@ -28,9 +28,9 @@ export class AuthService {
     }
   }
 
-  async validateTeacherByJwt(payload: JwtPayload) {
+  async validateTeacherByJwt(id: string) {
     // This will be used when the teacher has already logged in and has a JWT
-    const user = await this.teachersService.login(payload.id);
+    const user = await this.teachersService.findOne(id);
     if (user) {
       return this.createJwtPayload(user);
     } else {
@@ -52,9 +52,9 @@ export class AuthService {
     }
   }
 
-  async validateStudentByJwt(payload: JwtPayload) {
+  async validateStudentByJwt(id: string) {
     // This will be used when the teacher has already logged in and has a JWT
-    const user = await this.studentsService.login(payload.id);
+    const user = await this.studentsService.findOne(id);
     if (user) {
       return this.createJwtPayload(user);
     } else {
