@@ -9,6 +9,7 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { QuizModule } from './quiz/quiz.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
@@ -19,6 +20,7 @@ import { join } from 'path';
     TeachersModule,
     StudentsModule,
     AuthModule,
+    QuizModule,
   ],
   controllers: [AppController],
   providers: [AppService],

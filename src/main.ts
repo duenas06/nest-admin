@@ -18,18 +18,16 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle('Admin Crud')
+    .setTitle('TYTO Crud')
     .setDescription('Rest API for Admin User')
     .setVersion('1.0')
     .build();
-  const document = SwaggerModule.createDocument(app, config, {
-    ignoreGlobalPrefix: false,
-  });
+  const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('doc', app, document);
 
-  // app.useStaticAssets(join(__dirname, '..', 'public'));
-  // app.setBaseViewsDir(join(__dirname, '..', 'views'));
-  // app.setViewEngine('hbs');
+  app.useStaticAssets(join(__dirname, '..', 'public'));
+  app.setBaseViewsDir(join(__dirname, '..', 'views'));
+  app.setViewEngine('hbs');
   await app.listen(3000);
 }
 bootstrap();

@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsDefined } from 'class-validator';
 import { Column } from 'typeorm';
-export class CreateStudentDto {
+export class CreateQuizDto {
   @ApiProperty()
   @IsDefined()
   id: string;
@@ -9,32 +9,12 @@ export class CreateStudentDto {
   @ApiProperty()
   @Column()
   @IsDefined()
-  firstName: string;
+  quiz_name: string;
 
   @ApiProperty()
   @Column()
   @IsDefined()
-  lastName: string;
-
-  @ApiProperty()
-  @Column()
-  @IsDefined()
-  password: string;
-
-  @ApiProperty()
-  @Column()
-  @IsDefined()
-  middleInitial: string;
-
-  @ApiProperty()
-  @Column()
-  @IsDefined()
-  suffix: string;
-
-  @ApiProperty()
-  @Column()
-  @IsDefined()
-  personalEmail: string;
+  question: string;
 
   @ApiProperty()
   @Column()
@@ -44,10 +24,15 @@ export class CreateStudentDto {
   @ApiProperty()
   @Column()
   @IsDefined()
-  yearLevel: string;
+  isType: string;
 
   @ApiProperty()
   @Column()
   @IsDefined()
-  schoolYear: string;
+  answer: Array<string>;
+
+  @ApiProperty()
+  @Column()
+  @IsDefined()
+  choices: Array<string>;
 }

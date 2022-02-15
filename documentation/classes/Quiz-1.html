@@ -44,7 +44,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li >CreateStudentDto</li>
+  <li >Quiz</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,7 +62,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/students/dto/create-student.dto.ts</code>
+            <code>src/quiz/schemas/quiz.schema.ts</code>
         </p>
 
 
@@ -83,34 +83,25 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#firstName" >firstName</a>
+                                <a href="#answer" >answer</a>
+                            </li>
+                            <li>
+                                <a href="#choices" >choices</a>
                             </li>
                             <li>
                                 <a href="#id" >id</a>
                             </li>
                             <li>
-                                <a href="#lastName" >lastName</a>
+                                <a href="#isType" >isType</a>
                             </li>
                             <li>
-                                <a href="#middleInitial" >middleInitial</a>
+                                <a href="#question" >question</a>
                             </li>
                             <li>
-                                <a href="#password" >password</a>
-                            </li>
-                            <li>
-                                <a href="#personalEmail" >personalEmail</a>
-                            </li>
-                            <li>
-                                <a href="#schoolYear" >schoolYear</a>
+                                <a href="#quiz_name" >quiz_name</a>
                             </li>
                             <li>
                                 <a href="#sectionName" >sectionName</a>
-                            </li>
-                            <li>
-                                <a href="#suffix" >suffix</a>
-                            </li>
-                            <li>
-                                <a href="#yearLevel" >yearLevel</a>
                             </li>
                         </ul>
                     </td>
@@ -135,16 +126,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="firstName"></a>
+                    <a name="answer"></a>
                     <span class="name">
-                        <span ><b>firstName</b></span>
-                        <a href="#firstName"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>answer</b></span>
+                        <a href="#answer"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                        <i>Type : </i>    <code>Array&lt;string&gt;</code>
 
                     </td>
                 </tr>
@@ -153,13 +144,48 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiProperty()<br />@Column()<br />@IsDefined()<br />
+                            @Prop()<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/students/dto/create-student.dto.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/quiz/schemas/quiz.schema.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="choices"></a>
+                    <span class="name">
+                        <span ><b>choices</b></span>
+                        <a href="#choices"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Array&lt;string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Prop()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/quiz/schemas/quiz.schema.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -188,13 +214,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiProperty()<br />@IsDefined()<br />
+                            @Prop()<br />@MaxLength(7)<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/students/dto/create-student.dto.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/quiz/schemas/quiz.schema.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -205,10 +231,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="lastName"></a>
+                    <a name="isType"></a>
                     <span class="name">
-                        <span ><b>lastName</b></span>
-                        <a href="#lastName"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>isType</b></span>
+                        <a href="#isType"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -223,13 +249,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiProperty()<br />@Column()<br />@IsDefined()<br />
+                            @Prop()<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/students/dto/create-student.dto.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/quiz/schemas/quiz.schema.ts:23</a></div>
                         </td>
                     </tr>
 
@@ -240,10 +266,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="middleInitial"></a>
+                    <a name="question"></a>
                     <span class="name">
-                        <span ><b>middleInitial</b></span>
-                        <a href="#middleInitial"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>question</b></span>
+                        <a href="#question"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -258,13 +284,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiProperty()<br />@Column()<br />@IsDefined()<br />
+                            @Prop()<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/students/dto/create-student.dto.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/quiz/schemas/quiz.schema.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -275,10 +301,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="password"></a>
+                    <a name="quiz_name"></a>
                     <span class="name">
-                        <span ><b>password</b></span>
-                        <a href="#password"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>quiz_name</b></span>
+                        <a href="#quiz_name"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -293,83 +319,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiProperty()<br />@Column()<br />@IsDefined()<br />
+                            @Prop()<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/students/dto/create-student.dto.ts:22</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="personalEmail"></a>
-                    <span class="name">
-                        <span ><b>personalEmail</b></span>
-                        <a href="#personalEmail"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <b>Decorators : </b>
-                        <br />
-                        <code>
-                            @ApiProperty()<br />@Column()<br />@IsDefined()<br />
-                        </code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/students/dto/create-student.dto.ts:37</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="schoolYear"></a>
-                    <span class="name">
-                        <span ><b>schoolYear</b></span>
-                        <a href="#schoolYear"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <b>Decorators : </b>
-                        <br />
-                        <code>
-                            @ApiProperty()<br />@Column()<br />@IsDefined()<br />
-                        </code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/students/dto/create-student.dto.ts:52</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/quiz/schemas/quiz.schema.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -398,83 +354,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiProperty()<br />@Column()<br />@IsDefined()<br />
+                            @Prop()<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/students/dto/create-student.dto.ts:42</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="suffix"></a>
-                    <span class="name">
-                        <span ><b>suffix</b></span>
-                        <a href="#suffix"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <b>Decorators : </b>
-                        <br />
-                        <code>
-                            @ApiProperty()<br />@Column()<br />@IsDefined()<br />
-                        </code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/students/dto/create-student.dto.ts:32</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="yearLevel"></a>
-                    <span class="name">
-                        <span ><b>yearLevel</b></span>
-                        <a href="#yearLevel"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <b>Decorators : </b>
-                        <br />
-                        <code>
-                            @ApiProperty()<br />@Column()<br />@IsDefined()<br />
-                        </code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/students/dto/create-student.dto.ts:47</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/quiz/schemas/quiz.schema.ts:20</a></div>
                         </td>
                     </tr>
 
@@ -493,59 +379,38 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ApiProperty } from &#x27;@nestjs/swagger&#x27;;
-import { IsDefined } from &#x27;class-validator&#x27;;
-import { Column } from &#x27;typeorm&#x27;;
-export class CreateStudentDto {
-  @ApiProperty()
-  @IsDefined()
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Prop, Schema, SchemaFactory } from &#x27;@nestjs/mongoose&#x27;;
+import { Document } from &#x27;mongoose&#x27;;
+import { MaxLength } from &#x27;class-validator&#x27;;
+
+export type QuizDocument &#x3D; Quiz &amp; Document;
+
+@Schema()
+export class Quiz {
+  @Prop()
+  @MaxLength(7)
   id: string;
 
-  @ApiProperty()
-  @Column()
-  @IsDefined()
-  firstName: string;
+  @Prop()
+  quiz_name: string;
 
-  @ApiProperty()
-  @Column()
-  @IsDefined()
-  lastName: string;
+  @Prop()
+  question: string;
 
-  @ApiProperty()
-  @Column()
-  @IsDefined()
-  password: string;
-
-  @ApiProperty()
-  @Column()
-  @IsDefined()
-  middleInitial: string;
-
-  @ApiProperty()
-  @Column()
-  @IsDefined()
-  suffix: string;
-
-  @ApiProperty()
-  @Column()
-  @IsDefined()
-  personalEmail: string;
-
-  @ApiProperty()
-  @Column()
-  @IsDefined()
+  @Prop()
   sectionName: string;
 
-  @ApiProperty()
-  @Column()
-  @IsDefined()
-  yearLevel: string;
+  @Prop()
+  isType: string;
 
-  @ApiProperty()
-  @Column()
-  @IsDefined()
-  schoolYear: string;
+  @Prop()
+  answer: Array&lt;string&gt;;
+
+  @Prop()
+  choices: Array&lt;string&gt;;
 }
+
+export const QuizSchema &#x3D; SchemaFactory.createForClass(Quiz);
 </code></pre>
     </div>
 </div>
@@ -583,7 +448,7 @@ export class CreateStudentDto {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'CreateStudentDto.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'Quiz-1.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
