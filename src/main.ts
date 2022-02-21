@@ -20,6 +20,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('TYTO Crud')
     .setDescription('Rest API for Admin User')
+    .addServer('https://nest-admin-drey.vercel.app')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);
