@@ -13,9 +13,9 @@ import { JwtModule } from '@nestjs/jwt';
     StudentsModule,
     PassportModule.register({ defaultStrategy: 'jwt', session: false }),
     JwtModule.register({
-      secretOrPrivateKey: 'tytoadmin',
+      secretOrPrivateKey: process.env.JWT_TOKEN,
       signOptions: {
-        expiresIn: 86400,
+        expiresIn: process.env.EXPIRES_IN,
       },
     }),
   ],
