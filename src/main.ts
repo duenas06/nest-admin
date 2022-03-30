@@ -11,16 +11,16 @@ async function bootstrap() {
     cors: true,
   });
   app.setGlobalPrefix('tyto');
-  app.useGlobalPipes(
-    new ValidationPipe({
-      transform: true,
-    }),
-  );
+  // app.useGlobalPipes(
+  //   new ValidationPipe({
+  //     transform: true,
+  //   }),
+  // );
 
   const config = new DocumentBuilder()
-    .setTitle('TYTO Crud')
+    .setTitle('TYTO CRUD')
     .setDescription('Rest API for Admin User')
-    .setVersion('1.0')
+    .setVersion('v1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('doc', app, document);
