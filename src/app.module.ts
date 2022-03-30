@@ -10,6 +10,7 @@ import { AuthModule } from './auth/auth.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { QuizModule } from './quiz/quiz.module';
+import { SchedulesModule } from './schedules/schedules.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
@@ -21,6 +22,7 @@ import { QuizModule } from './quiz/quiz.module';
     StudentsModule,
     AuthModule,
     QuizModule,
+    SchedulesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
