@@ -11,11 +11,11 @@ async function bootstrap() {
     cors: true,
   });
   app.setGlobalPrefix('tyto');
-  app.useGlobalPipes(
-    new ValidationPipe({
-      transform: true,
-    }),
-  );
+//   app.useGlobalPipes(
+//     new ValidationPipe({
+//       transform: true,
+//     }),
+//   );
 
   const config = new DocumentBuilder()
     .setTitle('TYTO Crud')
