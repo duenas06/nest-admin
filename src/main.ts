@@ -19,7 +19,7 @@ async function bootstrap() {
   // );
   const config = new DocumentBuilder()
     .setTitle('TYTO CRUD')
-    .setDescription('Rest API for Admin User ')
+    .setDescription('Rest API : https://nest-admin-sigma.vercel.app')
     .setVersion('v1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);
